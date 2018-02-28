@@ -1,0 +1,50 @@
+package com.OodlesCrudApp.Subjects;
+
+
+
+
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class SubjectController {
+	@Autowired
+	private SubjectController subjectService;
+
+	@RequestMapping("/subject")
+	public List<Subjects> getAllTopics() {
+		return subjectService.getAllTopics();
+	}
+	
+	@RequestMapping("/subj topicect/{id}")
+	public SubjectController getTopic(@PathVariable String id) {
+		return subjectService.getTopic(id);
+	}
+	@RequestMapping(method=RequestMethod.POST,value="/subject")
+	public void addTopic(@RequestBody Subjects topic) {
+		 subjectService.addTopic(topic);
+		
+		
+	}
+	@RequestMapping(method=RequestMethod.PUT,value="/subject/{id}")
+	public void updateTopic(@RequestBody Subjects topic,@PathVariable String id) {
+		 subjectService.updateTopic(topic,id);
+		
+		
+	}
+	@RequestMapping(method=RequestMethod.DELETE,value="/subject/{id}")
+	public void deleteTopic(@RequestBody Subjects topic,@PathVariable String id) {
+		subjectService.deleteTopic(topic,id);
+		
+		
+	}
+
+}

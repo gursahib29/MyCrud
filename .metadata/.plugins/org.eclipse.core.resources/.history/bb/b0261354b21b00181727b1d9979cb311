@@ -1,0 +1,47 @@
+package com.OodlesCrudApp.Subjects;
+
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class SubjectService {
+
+	@Autowired
+	private SubjectRepository subjectRepository;
+
+	public List<Subjects> getAllSubjects(String id) {
+
+		List<Subjects> topics = new ArrayList<>();
+		subjectRepository.findAll().forEach(topics::add);
+		return topics;
+	}
+
+	public Subjects getSubject(String id) {
+		
+		return subjectRepository.findOne(id);
+
+	}
+
+	public void addSubject(Subjects topic) {
+		subjectRepository.save(topic);
+
+	}
+
+	public void updateSubject(Subjects subject,String id) {
+
+		subjectRepository.save(subject);
+		
+	}
+
+	public void deleteSubject(String id) {
+		subjectRepository.delete(id);
+		
+	}
+
+}

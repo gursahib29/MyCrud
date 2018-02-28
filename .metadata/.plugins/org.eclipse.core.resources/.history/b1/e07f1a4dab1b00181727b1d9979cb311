@@ -1,0 +1,47 @@
+package com.OodlesCrudApp.Professor;
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ProfessorService  {
+
+	@Autowired
+	private ProfessorRepository professorRepository;
+
+	public List<Professor> getAllTopics() {
+
+		List<Professor> topics = new ArrayList<>();
+		
+		 professorRepository.findAll().forEach(topics::add);
+		return topics;
+	}
+
+	public Professor getTopic(String id) {
+		
+		return professorRepository.findOne(id);
+
+	}
+
+	public void addTopic(Professor topic) {
+		professorRepository.save(topic);
+
+	}
+
+	public void updateTopic(Professor topic,String id) {
+
+		professorRepository.save(topic);
+		
+	}
+
+	public void deleteTopic(Professor topic,String id) {
+		professorRepository.delete(id);
+		
+	}
+
+}

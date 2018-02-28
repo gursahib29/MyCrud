@@ -1,0 +1,12 @@
+package com.OodlesCrudApp.main;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.OodlesCrudApp.Professor.Topic;
+
+public interface SubjectRepository extends CrudRepository<Subjects,String> {
+
+
+}

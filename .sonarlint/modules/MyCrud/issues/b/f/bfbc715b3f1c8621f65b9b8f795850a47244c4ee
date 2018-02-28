@@ -1,0 +1,7 @@
+
+„squid:UselessImportCheck">Remove this unused import 'com.OodlesCrudApp.Professor.Topic'.(ÅÔÚ–şÿÿÿÿ8¼©è¹,HRMINORZ
+CODE_SMELL
+qsquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¼©è¹,HRMINORZ
+CODE_SMELL
+Šsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(ãâœşÿÿÿÿH‘RMINORZ
+CODE_SMELL

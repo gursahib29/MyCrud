@@ -1,0 +1,6 @@
+package com.OodlesCrudApp.Professor;
+
+public interface ProfessorRepository extends CrudRepository{
+	
+
+}

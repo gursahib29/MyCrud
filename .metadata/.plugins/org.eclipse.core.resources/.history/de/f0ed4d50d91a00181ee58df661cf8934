@@ -1,0 +1,54 @@
+package com.Mycrud.Mycrud;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ReadService
+{
+		@Autowired
+		ReadRepository read;
+		
+		public List<Read> getAllTopics()
+		{
+			
+			List<Read> topics=new ArrayList<>();
+			 read.findAll()
+			 .forEach(topics::add);
+			
+			return topics;
+		}
+		
+		public Read getTopic(String id)
+		{
+			
+			
+			return read.findOne(id);
+		}
+
+		public void add(Read topic) 
+		{
+			
+			
+			read.save(topic);
+		}
+
+		public void update(String id,Read topic) {
+			
+			read.save(topic);
+			
+			
+			
+		}
+
+		public void deleteById(String id) 
+		{
+			read.delete(id);
+			
+		}
+
+}
